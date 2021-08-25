@@ -112,6 +112,54 @@ function gameObject(){
                 }
             }
         }
-        
     }
 }
+
+function numPointsScored(inputPlayer){
+    const game = gameObject()
+    for(const elem in game){
+        const teamObj = game[elem]
+        const playerObj = teamObj.players
+        for(const player in playerObj){
+            if(player === inputPlayer){
+                return playerObj[player].points
+            }
+        }
+    }
+}
+console.log(numPointsScored("Brenden Haywood"))
+
+function shoeSize (inputPlayer){
+    const game = gameObject()
+    for(const elem in game){
+        const teamObj = game[elem]
+        const playerObj = teamObj.players
+        for(const player in playerObj){
+            if(player === inputPlayer){
+                return playerObj[player].shoe
+            }
+        }
+    }
+}
+
+console.log(shoeSize("Brenden Haywood"))
+
+function teamColors(team){
+    const game = gameObject()
+    for(const elem in game){
+        const teamObj = game[elem]
+        
+        const colorsArray = teamObj.colors
+        console.log(colorsArray)
+        if(colorsArray === team){
+            return game[teamName]
+        }
+       
+        
+
+        }
+        
+    }
+
+
+console.log(teamColors("Brooklyn Nets"))
