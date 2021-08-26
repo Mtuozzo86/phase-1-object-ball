@@ -115,51 +115,71 @@ function gameObject(){
     }
 }
 
-function numPointsScored(inputPlayer){
+// function numPointsScored(inputPlayer){
+//     const game = gameObject()
+//     for(const elem in game){
+//         const teamObj = game[elem]
+//         console.log(teamObj)
+//         const playerObj = teamObj.players
+//         for(const player in playerObj){
+//             if(player === inputPlayer){
+//                 return playerObj[player].points
+//             }
+//         }
+//     }
+// }
+// console.log(numPointsScored("Brenden Haywood"))
+
+function playerNumbers(inputTeam){
     const game = gameObject()
+    let jerseyNumbers = []
     for(const elem in game){
-        const teamObj = game[elem]
-        const playerObj = teamObj.players
-        for(const player in playerObj){
-            if(player === inputPlayer){
-                return playerObj[player].points
-            }
-        }
+        const team = game[elem]
+        console.log(team)
     }
+
 }
-console.log(numPointsScored("Brenden Haywood"))
-
-function shoeSize (inputPlayer){
+console.log(playerNumbers())
+function teamNames(){
     const game = gameObject()
+    let teamArray = []
     for(const elem in game){
-        const teamObj = game[elem]
-        const playerObj = teamObj.players
-        for(const player in playerObj){
-            if(player === inputPlayer){
-                return playerObj[player].shoe
-            }
-        }
+        const teams = game[elem].teamName
+        teamArray.push(teams)
+        
     }
+    return teamArray
 }
 
-console.log(shoeSize("Brenden Haywood"))
+console.log(teamNames())
+// function teamColors(team){
+//     const game = gameObject()
 
-function teamColors(team){
-    const game = gameObject()
-    for(const elem in game){
-        const teamObj = game[elem]
-        
-        const colorsArray = teamObj.colors
-        console.log(colorsArray)
-        if(colorsArray === team){
-            return game[teamName]
-        }
-       
-        
+//     for(const elem in game){
+//         const teamObj = game[elem]
 
-        }
-        
-    }
+//         if(teamObj.teamName === team){
+//             return teamObj.colors
+//         }
+//     }
+// }
+
+// console.log(teamColors("Charlotte Hornets"))
+// console.log(teamColors("Brooklyn Nets"))
 
 
-console.log(teamColors("Brooklyn Nets"))
+// function shoeSize (inputPlayer){
+//     const game = gameObject()
+//     for(const elem in game){
+//         const teamObj = game[elem]
+//         const playerObj = teamObj.players
+//         for(const player in playerObj){
+//             if(player === inputPlayer){
+//                 return playerObj[player].shoe
+//             }
+//         }
+//     }
+// }
+
+// shoeSize("Brenden Haywood")
+
