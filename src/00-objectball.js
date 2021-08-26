@@ -114,22 +114,22 @@ function gameObject(){
         }
     }
 }
-
-// function numPointsScored(inputPlayer){
-//     const game = gameObject()
-//     for(const elem in game){
-//         const teamObj = game[elem]
-//         console.log(teamObj)
-//         const playerObj = teamObj.players
-//         for(const player in playerObj){
-//             if(player === inputPlayer){
-//                 return playerObj[player].points
-//             }
-//         }
-//     }
-// }
-// console.log(numPointsScored("Brenden Haywood"))
-
+///////////////////////
+function numPointsScored(inputPlayer){
+    const game = gameObject()
+    for(const elem in game){
+        const teamObj = game[elem]
+        console.log(teamObj)
+        const playerObj = teamObj.players
+        for(const player in playerObj){
+            if(player === inputPlayer){
+                return playerObj[player].points
+            }
+        }
+    }
+}
+console.log(numPointsScored("Brenden Haywood"))
+///////////////////////
 function playerNumbers(inputTeam){
     const game = gameObject()
     let jerseyNumbers = []
@@ -149,51 +149,51 @@ return jerseyNumbers
 }
 console.log(playerNumbers("Brooklyn Nets"))
 console.log(playerNumbers("Charlotte Hornets"))
-
-// function teamNames(){
-//     const game = gameObject()
-//     let teamArray = []
-//     for(const elem in game){
-//         const teams = game[elem].teamName
-//         teamArray.push(teams)
+///////////////////////
+function teamNames(){
+    const game = gameObject()
+    let teamArray = []
+    for(const elem in game){
+        const teams = game[elem].teamName
+        teamArray.push(teams)
         
-//     }
-//     return teamArray
-// }
+    }
+    return teamArray
+}
 
-// console.log(teamNames())
+console.log(teamNames())
+///////////////////////
 
+function teamColors(team){
+    const game = gameObject()
 
-// function teamColors(team){
-//     const game = gameObject()
+    for(const elem in game){
+        const teamObj = game[elem]
 
-//     for(const elem in game){
-//         const teamObj = game[elem]
+        if(teamObj.teamName === team){
+            return teamObj.colors
+        }
+    }
+}
 
-//         if(teamObj.teamName === team){
-//             return teamObj.colors
-//         }
-//     }
-// }
+console.log(teamColors("Charlotte Hornets"))
+console.log(teamColors("Brooklyn Nets"))
 
-// console.log(teamColors("Charlotte Hornets"))
-// console.log(teamColors("Brooklyn Nets"))
+///////////////////////
+function shoeSize (inputPlayer){
+    const game = gameObject()
+    for(const elem in game){
+        const teamObj = game[elem]
+        const playerObj = teamObj.players
+        console.log(playerObj)
+        for(const player in playerObj){
+            console.log(player)
+            if(player === inputPlayer){
+                return playerObj[player].shoe
+            }
+        }
+    }
+}
 
-
-// function shoeSize (inputPlayer){
-//     const game = gameObject()
-//     for(const elem in game){
-//         const teamObj = game[elem]
-//         const playerObj = teamObj.players
-//         console.log(playerObj)
-//         for(const player in playerObj){
-//             console.log(player)
-//             if(player === inputPlayer){
-//                 return playerObj[player].shoe
-//             }
-//         }
-//     }
-// }
-
-// console.log(shoeSize("Brenden Haywood"))
+console.log(shoeSize("Brenden Haywood"))
 
