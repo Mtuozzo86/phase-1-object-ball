@@ -115,11 +115,19 @@ function gameObject(){
     }
 }
 ///////////////////////
+function homeTeam(){
+    return gameObject().home
+}
+
+function awayTeam(){
+    return gameObject().away
+}
+
+
 function numPointsScored(inputPlayer){
     const game = gameObject()
     for(const elem in game){
         const teamObj = game[elem]
-        console.log(teamObj)
         const playerObj = teamObj.players
         for(const player in playerObj){
             if(player === inputPlayer){
