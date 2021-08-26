@@ -133,25 +133,37 @@ function gameObject(){
 function playerNumbers(inputTeam){
     const game = gameObject()
     let jerseyNumbers = []
-    for(const elem in game){
-        const team = game[elem]
-        console.log(team)
-    }
-
-}
-console.log(playerNumbers())
-function teamNames(){
-    const game = gameObject()
-    let teamArray = []
-    for(const elem in game){
-        const teams = game[elem].teamName
-        teamArray.push(teams)
+    for(elem in game){
+        const teamObj = game[elem]
+        const teamName = game[elem].teamName
+        const playerObj = teamObj.players
+        for(elem in playerObj){
+            const numbers = playerObj[elem].number
+            if(teamName === inputTeam){
+                jerseyNumbers.push(numbers)
+            }
+        }
         
-    }
-    return teamArray
+        }
+return jerseyNumbers
 }
+console.log(playerNumbers("Brooklyn Nets"))
+console.log(playerNumbers("Charlotte Hornets"))
 
-console.log(teamNames())
+// function teamNames(){
+//     const game = gameObject()
+//     let teamArray = []
+//     for(const elem in game){
+//         const teams = game[elem].teamName
+//         teamArray.push(teams)
+        
+//     }
+//     return teamArray
+// }
+
+// console.log(teamNames())
+
+
 // function teamColors(team){
 //     const game = gameObject()
 
@@ -173,7 +185,9 @@ console.log(teamNames())
 //     for(const elem in game){
 //         const teamObj = game[elem]
 //         const playerObj = teamObj.players
+//         console.log(playerObj)
 //         for(const player in playerObj){
+//             console.log(player)
 //             if(player === inputPlayer){
 //                 return playerObj[player].shoe
 //             }
@@ -181,5 +195,5 @@ console.log(teamNames())
 //     }
 // }
 
-// shoeSize("Brenden Haywood")
+// console.log(shoeSize("Brenden Haywood"))
 
