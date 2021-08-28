@@ -114,14 +114,17 @@ function gameObject(){
         }
     }
 }
+
+
 ///////////////////////
 function numPointsScored(inputPlayer){
     const game = gameObject()
     for(const elem in game){
         const teamObj = game[elem]
-        console.log(teamObj)
         const playerObj = teamObj.players
+
         for(const player in playerObj){
+            console.log(player)
             if(player === inputPlayer){
                 return playerObj[player].points
             }
@@ -169,7 +172,7 @@ function teamColors(team){
 
     for(const elem in game){
         const teamObj = game[elem]
-
+        console.log(teamObj)
         if(teamObj.teamName === team){
             return teamObj.colors
         }
@@ -185,9 +188,7 @@ function shoeSize (inputPlayer){
     for(const elem in game){
         const teamObj = game[elem]
         const playerObj = teamObj.players
-        console.log(playerObj)
         for(const player in playerObj){
-            console.log(player)
             if(player === inputPlayer){
                 return playerObj[player].shoe
             }
@@ -197,3 +198,17 @@ function shoeSize (inputPlayer){
 
 console.log(shoeSize("Brenden Haywood"))
 
+function playerStats(inputPlayer){
+    const game = gameObject()
+    for(let keys in game){
+        const teams = game[keys]
+        const playerObj = teams.players
+        for(let player in playerObj){
+            if(inputPlayer === player){
+                return playerObj[player]
+            }
+        }
+    }
+}
+
+console.log(playerStats("Reggie Evans"))
